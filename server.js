@@ -10,6 +10,10 @@ const quotes = require("./quotes.json");
 
 const lodash = require('lodash');
 
+var cors = require('cors');
+
+app.use(cors());
+
 // Now register handlers for some routes:
 //   /                  - Return some helpful welcome info (text)
 //   /quotes            - Should return all quotes (json)
@@ -59,6 +63,6 @@ app.get("/quotes/search", (req, res) => {
 });
 
 //Start our server so that it listens for HTTP requests!
-const listener = app.listen(3000, function () {
+const listener = app.listen(4000, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
